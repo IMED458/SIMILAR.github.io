@@ -4,11 +4,16 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: 'app',
   base: './',
+  build: {
+    outDir: '../',
+    emptyOutDir: false,
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
+      '@': path.resolve(__dirname, 'app'),
     },
   },
 });

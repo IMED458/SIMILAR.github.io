@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Facebook, ArrowUpRight } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
+import { BrandLogo } from './BrandLogo';
 
 export const Footer = () => {
   const { addNotification } = useShop();
@@ -21,7 +22,9 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
-            <Link to="/" className="font-display text-3xl font-bold tracking-tighter">similR</Link>
+            <Link to="/" className="inline-flex items-center" aria-label="similR home">
+              <BrandLogo imageClassName="h-11 sm:h-12" />
+            </Link>
             <p className="text-gray-500 max-w-xs leading-relaxed">
               Elevated wardrobe essentials for people who want clean silhouettes, strong materials, and a confident everyday look.
             </p>

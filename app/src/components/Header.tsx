@@ -4,6 +4,7 @@ import { Search, User, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useShop } from '../context/ShopContext';
 import { cn } from '../lib/utils';
+import { BrandLogo } from './BrandLogo';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,9 +52,10 @@ export const Header = () => {
         {/* Logo */}
         <Link 
           to="/" 
-          className="font-display text-2xl font-bold tracking-tighter"
+          className="inline-flex items-center"
+          aria-label="similR home"
         >
-          similR
+          <BrandLogo imageClassName="h-9 sm:h-10" />
         </Link>
 
         {/* Desktop Nav */}
@@ -119,7 +121,7 @@ export const Header = () => {
               className="fixed top-0 left-0 h-full w-[80%] max-w-sm bg-white z-[70] p-8 flex flex-col"
             >
               <div className="flex items-center justify-between mb-12">
-                <span className="font-display text-2xl font-bold tracking-tighter">similR</span>
+                <BrandLogo imageClassName="h-10" />
                 <button onClick={() => setIsMobileMenuOpen(false)}>
                   <X className="w-6 h-6" />
                 </button>
